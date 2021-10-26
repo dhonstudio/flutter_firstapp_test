@@ -1,6 +1,8 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, use_key_in_widget_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, use_key_in_widget_constructors, unused_import
 
 import 'package:flutter/material.dart';
+import 'package:flutter_firstapp/layoutcolumn.dart';
+import 'package:flutter_firstapp/layoutrow.dart';
 
 void main() {
   runApp(MyHomepage());
@@ -16,7 +18,7 @@ class MyHomepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return (MaterialApp(
       title: 'Belajar Flutter',
-      home: BookPage(), //class yang pertama kali dibuka
+      home: LayoutRow(), //class yang pertama kali dibuka
       theme: ThemeData(primarySwatch: Colors.deepOrange),
     ));
   }
