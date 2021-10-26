@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_firstapp/layoutcolumn.dart';
+import 'package:flutter_firstapp/layoutlistview.dart';
 import 'package:flutter_firstapp/layoutrow.dart';
 
 void main() {
@@ -18,7 +19,7 @@ class MyHomepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return (MaterialApp(
       title: 'Belajar Flutter',
-      home: LayoutRow(), //class yang pertama kali dibuka
+      home: LayoutListView(), //class yang pertama kali dibuka
       theme: ThemeData(primarySwatch: Colors.deepOrange),
     ));
   }
