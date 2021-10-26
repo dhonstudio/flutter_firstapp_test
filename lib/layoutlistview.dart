@@ -7,46 +7,46 @@ class LayoutListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Layout ListView'),
+        title: Text('ListView Card & ListTile'),
       ),
       body: MyListViewCard(),
     );
   }
 }
 
-class MyListView extends StatelessWidget {
+class MyListViewListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return (ListView(
-      padding: EdgeInsets.all(12.0),
+      padding: EdgeInsets.all(8.0),
       children: <Widget>[
         ListTile(
           title: Text('Home'),
           subtitle: Text('This is Homepage'),
           leading: Icon(Icons.home),
-          trailing: Icon(Icons.bookmark),
+          trailing: Icon(Icons.bookmark_outline),
         ),
         ListTile(
-          title: Text('List 2'),
-          subtitle: Text('This is your Contact'),
+          title: Text('Contact'),
+          subtitle: Text('This is your contact'),
           leading: Icon(Icons.ballot),
           trailing: Icon(Icons.bookmark_outline),
         ),
         ListTile(
-          title: Text('List 3'),
-          subtitle: Text('Manage Account here'),
+          title: Text('Account'),
+          subtitle: Text('Manage account here'),
           leading: Icon(Icons.person),
           trailing: Icon(Icons.bookmark_outline),
         ),
         ListTile(
-          title: Text('List 4'),
-          subtitle: Text('Access your recent file'),
+          title: Text('Recent'),
+          subtitle: Text('Access your recent files'),
           leading: Icon(Icons.alarm),
           trailing: Icon(Icons.bookmark_outline),
         ),
         ListTile(
-          title: Text('List 5'),
-          subtitle: Text('Send Email'),
+          title: Text('Email'),
+          subtitle: Text('Send me an email'),
           leading: Icon(Icons.email),
           trailing: Icon(Icons.bookmark_outline),
         ),
@@ -56,37 +56,59 @@ class MyListView extends StatelessWidget {
 }
 
 class MyListViewCard extends StatelessWidget {
+  var Title = ['My Github', 'Alex Suprun', 'Nicolas Horn'];
+  var Subtitle = [
+    'Github homepage',
+    'Photo of Alex Suprun',
+    'Photo of Nicolas Horn'
+  ];
+  var Trailing = Icon(Icons.bookmark_outline);
+
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      padding: EdgeInsets.all(8.0),
-      children: <Widget>[
-        Card(
-          child: ListTile(
-            onTap: () {
-              print("Klik Github");
-            },
-            title: Text('My Github'),
-            subtitle: Text('Github Homepage'),
-            leading: CircleAvatar(
-              backgroundImage: NetworkImage(
-                  'https://avatars.githubusercontent.com/u/46585919?v=4'),
-            ),
-            trailing: Icon(Icons.bookmark_outline),
+    return ListView(padding: EdgeInsets.all(8.0), children: <Widget>[
+      Card(
+        child: ListTile(
+          onTap: () {
+            print("Anda mengklik My Github");
+          },
+          title: Text(Title[0]),
+          subtitle: Text(Subtitle[0]),
+          leading: CircleAvatar(
+            backgroundImage: NetworkImage(
+                'https://avatars.githubusercontent.com/u/18276695?v=4'),
           ),
+          trailing: Trailing,
         ),
-        Card(
-          child: ListTile(
-            title: Text('Alex Suprun'),
-            subtitle: Text('Photo of Alex'),
-            leading: CircleAvatar(
-              backgroundImage: NetworkImage(
-                  'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=580&q=80'),
-            ),
-            trailing: Icon(Icons.bookmark_outline),
+      ),
+      Card(
+        child: ListTile(
+          onTap: () {
+            print("Anda mengklik Alex Suprun");
+          },
+          title: Text(Title[1]),
+          subtitle: Text(Subtitle[1]),
+          leading: CircleAvatar(
+            backgroundImage: NetworkImage(
+                'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde'),
           ),
-        )
-      ],
-    );
+          trailing: Trailing,
+        ),
+      ),
+      Card(
+        child: ListTile(
+          onTap: () {
+            print("Anda mengklik Nicolas Horn");
+          },
+          title: Text(Title[2]),
+          subtitle: Text(Subtitle[2]),
+          leading: CircleAvatar(
+            backgroundImage: NetworkImage(
+                'https://images.unsplash.com/photo-1527980965255-d3b416303d12'),
+          ),
+          trailing: Trailing,
+        ),
+      ),
+    ]);
   }
 }
